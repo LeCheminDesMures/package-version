@@ -10,7 +10,7 @@ async function run(): Promise<void> {
     const version = getVersion(path)
 
     core.debug(`set output: version: ${version}`)
-    core.setOutput('version', version)
+    core.exportVariable('PACKAGE_VERSION', version)
   } catch (error) {
     core.setFailed(error.message)
   }
