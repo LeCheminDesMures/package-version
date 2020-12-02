@@ -80,7 +80,7 @@ function run() {
             core.debug(`Load package.json at ${path}`);
             const version = getVersion_1.default(path);
             core.debug(`set output: version: ${version}`);
-            core.setOutput('version', version);
+            core.exportVariable('PACKAGE_VERSION', version);
         }
         catch (error) {
             core.setFailed(error.message);
